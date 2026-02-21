@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- ==========================================================
+     index.html — Le Domaine des Charmes
+     ----------------------------------------------------------
+     Structure :
+     - <head>        : meta, fonts, liens vers style.css
+     - NAV           : barre de navigation fixe
+     - HERO          : section plein écran
+     - INTRO         : présentation du domaine
+     - FEATURES      : bandeau équipements
+     - ROOMS         : chambres & tarifs
+     - GALLERY       : mosaïque photos
+     - EXPERIENCES   : activités locales
+     - TESTIMONIALS  : avis voyageurs
+     - BOOKING       : formulaire de réservation
+     - ACCESS        : infos accès + carte
+     - BLOG          : articles + pagination
+     - BLOG MODAL    : fenêtre lecture article
+     - FOOTER        : pied de page
+     - <script>      : lien vers script.js
+     ========================================================== -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Domaine des Charmes — Gîte & Maison d'Hôtes</title>
+  <meta name="description" content="Maison d'hôtes de charme au cœur de la campagne. Séjours authentiques, petit-déjeuner maison, piscine et jardins." />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  
+</head>
+<body>
+
+  <!-- Les sections sont chargées dynamiquement depuis le dossier partials/ -->
+  <div id="partial-nav"></div>
+  <div id="partial-hero"></div>
+  <div id="partial-intro"></div>
+  <div id="partial-features"></div>
+  <div id="partial-rooms"></div>
+  <div id="partial-gallery"></div>
+  <div id="partial-experiences"></div>
+  <div id="partial-testimonials"></div>
+  <div id="partial-booking"></div>
+  <div id="partial-access"></div>
+  <div id="partial-blog"></div>
+  <div id="partial-blog-modal"></div>
+  <div id="partial-footer"></div>
+
+  <!-- Chargement des partials puis du script principal -->
+  <script>
+    // Liste des partials à charger dans l'ordre
+    const PARTIALS = [
+      'nav', 'hero', 'intro', 'features', 'rooms',
+      'gallery', 'experiences', 'testimonials', 'booking',
+      'access', 'blog', 'blog-modal', 'footer'
+    ];
+
+    // Charge tous les partials puis lance script.js
+    Promise.all(
+      PARTIALS.map(name =>
+        fetch(`partials/${name}.html`)
+          .then(r => {
+            if (!r.ok) throw new Error(`Partial "${name}" introuvable (${r.status})`);
+            return r.text();
+          })
+          .then(html => {
+            document.getElementById(`partial-${name}`).innerHTML = html;
+          })
+      )
+    )
+    .then(() => {
+      // Tous les partials sont injectés — on charge le JS principal
+      const s = document.createElement('script');
+      s.src = 'script.js';
+      document.body.appendChild(s);
+    })
+    .catch(err => console.error('Erreur chargement partial :', err));
+  </script>
+
+</body>
+</html>

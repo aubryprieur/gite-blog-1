@@ -1,0 +1,133 @@
+<!-- ── BOOKING ───────────────────────────────────────────── -->
+  <section class="booking" id="booking">
+    <div class="section-inner">
+      <div class="booking-wrap">
+
+        <div class="booking-left reveal">
+          <p class="label">Réservation</p>
+          <h2 class="display">Préparez votre séjour</h2>
+          <span class="gold-line" style="margin: 1.2rem 0;"></span>
+          <p>Contactez-nous directement pour vérifier les disponibilités et réserver votre chambre. Nous vous répondons sous 24h.</p>
+          <p>Pour les séjours de 5 nuits ou plus, profitez d'une réduction de <strong>10%</strong>.</p>
+
+                    <!-- ─────────────────────────────────────────────────────
+               PLATEFORMES DE RÉSERVATION INSTANTANÉE
+               ─────────────────────────────────────────────────────
+               Pour activer un bouton :
+                 1. Remplacez href="#" par votre vrai lien de profil
+                 2. Retirez l'attribut  data-disabled="true"  du bouton
+               Pour désactiver un bouton :
+                 1. Ajoutez  data-disabled="true"  sur le bouton
+               ───────────────────────────────────────────────────── -->
+          <div class="booking-platforms" id="bookingPlatforms">
+
+            <p class="platforms-label">Réservation instantanée</p>
+
+            <!-- Airbnb — remplacer # par votre URL Airbnb -->
+            <a href="#"
+               class="platform-btn platform-airbnb"
+
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Réserver sur Airbnb">
+              <img src="../assets/airbnb.jpeg" alt="Airbnb" class="platform-logo" />
+              <span>Réserver sur Airbnb</span>
+              <svg class="platform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <!-- Booking.com — remplacer # par votre URL Booking -->
+            <a href="#"
+               class="platform-btn platform-booking"
+
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Réserver sur Booking.com">
+              <img src="../assets/booking.jpeg" alt="Booking.com" class="platform-logo" />
+              <span>Réserver sur Booking.com</span>
+              <svg class="platform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <!-- Abritel — remplacer # par votre URL Abritel -->
+            <a href="#"
+               class="platform-btn platform-abritel"
+
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Réserver sur Abritel">
+              <img src="../assets/abritel.png" alt="Abritel" class="platform-logo" />
+              <span>Réserver sur Abritel</span>
+              <svg class="platform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <!-- Gîtes de France — remplacer # par votre URL Gîtes de France -->
+            <a href="#"
+               class="platform-btn platform-gdf"
+
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Réserver sur Gîtes de France">
+              <img src="../assets/gites-de-france.png" alt="Gîtes de France" class="platform-logo" />
+              <span>Réserver sur Gîtes de France</span>
+              <svg class="platform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+          </div><!-- /.booking-platforms -->
+
+          <div class="booking-divider">
+            <span>ou contactez-nous directement</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="booking-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Prénom & Nom</label>
+                <input type="text" id="fname" placeholder="Marie Dupont" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="marie@exemple.fr" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkin">Arrivée</label>
+                <input type="date" id="checkin" />
+              </div>
+              <div class="form-group">
+                <label for="checkout">Départ</label>
+                <input type="date" id="checkout" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="room">Chambre souhaitée</label>
+                <select id="room">
+                  <option value="">— Choisir —</option>
+                  <option>La Vigne (120€/nuit)</option>
+                  <option>La Forêt — Suite (185€/nuit)</option>
+                  <option>Le Chêne — Familiale (160€/nuit)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="guests">Nombre de personnes</label>
+                <select id="guests">
+                  <option>1 personne</option>
+                  <option>2 personnes</option>
+                  <option>3 personnes</option>
+                  <option>4+ personnes</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (optionnel)</label>
+              <textarea id="message" placeholder="Régimes alimentaires, occasions spéciales…"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
